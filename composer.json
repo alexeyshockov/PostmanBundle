@@ -21,7 +21,7 @@
     "require":     {
         "php": ">=5.3.2",
 
-        "symfony/monolog-bundle": "v2.*",
+        "symfony/monolog-bundle": "*",
 
         "alexeyshockov/colada": "dev-master",
         "alexeyshockov/clock":  "dev-master",
