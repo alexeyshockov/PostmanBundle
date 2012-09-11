@@ -2,13 +2,9 @@
 
 namespace Postman\PostmanBundle\Parser;
 
-use JMS\DiExtraBundle\Annotation as DI;
-
 use Postman\PostmanBundle\Mail;
 
 /**
- * @DI\Service("postman.parser")
- *
  * @author Alexey Shockov <alexey@shockov.com>
  */
 class Parser implements ParserInterface
@@ -18,7 +14,7 @@ class Parser implements ParserInterface
      *
      * @return \Postman\PostmanBundle\Mail
      */
-    function parse($mail)
+    public function parse($mail)
     {
         $parser = new \ezcMailParser();
 
@@ -36,6 +32,10 @@ class Parser implements ParserInterface
             }
         } else {
             $plainPart = $mail->body;
+        }
+
+        if (empty($mail->from) || empty($mail->to)) {
+            throw new \InvalidArgumentException('Unable to parse message.');
         }
 
         $visibleFragments = \EmailReplyParser\EmailReplyParser::read($plainPart->text);

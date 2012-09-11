@@ -4,6 +4,8 @@ namespace Postman\PostmanBundle\Event;
 
 use Symfony\Component\EventDispatcher\Event;
 
+use Postman\PostmanBundle\Mail;
+
 /**
  * @author Alexey Shockov <alexey@shockov.com>
  */
@@ -15,7 +17,7 @@ class MailReceiveEvent extends Event
     private $raw;
 
     /**
-     * @var \Postman\Mail
+     * @var \Postman\PostmanBundle\Mail
      */
     private $mail;
 
@@ -26,7 +28,7 @@ class MailReceiveEvent extends Event
     }
 
     /**
-     * @return \Postman\Mail
+     * @return \Postman\PostmanBundle\Mail
      */
     public function getMail()
     {
