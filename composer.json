@@ -23,12 +23,12 @@
 
         "symfony/monolog-bundle": "*",
 
-        "alexeyshockov/colada": "dev-master",
-        "alexeyshockov/clock":  "dev-master",
+        "alexeyshockov/colada": "1.0.*",
+        "alexeyshockov/clock":  ">=0.1.0",
 
         "zetacomponents/mail": "dev-master",
 
-        "willdurand/email-reply-parser": "dev-master"
+        "willdurand/email-reply-parser": "1.0.*"
     },
     "target-dir":  "Postman/PostmanBundle"
 }
